@@ -41,7 +41,9 @@ function startQuiz() {
 }
 
 function showQuestion(currentQuestionIndex) {
-  question.innerHTML = `${questionNumber++}. ${allQuestions[0].question}`;
+  question.innerHTML = `${questionNumber++}. ${
+    allQuestions[currentQuestionIndex].question
+  }`;
   nextButton.classList.remove("hide");
 
   /* 
