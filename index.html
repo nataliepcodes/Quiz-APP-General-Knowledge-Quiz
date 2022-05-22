@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-title" id="quiz-title">General Knowledge Quiz</div>
+      <div class="question-section hide" id="question-section">
+        <div class="question" id="question">Question</div>
+        <div class="answer-section" id="answer-section">
+          <button class="answer-btn disabled" id="answer-1">Answer 1</button>
+          <button class="answer-btn disabled" id="answer-2">Answer 2</button>
+          <button class="answer-btn disabled" id="answer-3">Answer 3</button>
+          <button class="answer-btn disabled" id="answer-4">Answer 4</button>
+        </div>
+      </div>
+      <div class="control-section">
+        <button class="start-btn btn" id="start-btn">Start</button>
+        <button class="restart-btn hide" id="restart-btn">Restart</button>
+        <button class="next-btn hide" id="next-btn">Next</button>
+      </div>
+      <div class="result-msg" id="result-msg"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
