@@ -56,16 +56,17 @@ function showQuestion(currentQuestionIndex) {
   answer3.disabled = false;
   answer4.disabled = false;
 
+  //answer1.value = allQuestions[currentQuestionIndex].answer[0].isCorrect;
+
   /*
   after NEXT button is selected once Q1 is answered the below code will remove the previous answer button's background color and
   results message to clear this for the next Question
-  */
+ 
   answer1.style.backgroundColor = "";
   answer2.style.backgroundColor = "";
   answer3.style.backgroundColor = "";
   answer4.style.backgroundColor = "";
-  resultMessage.innerHTML = "";
-
+  resultMessage.innerHTML = ""; */
   //assigning answer array's values from allQuestions array to answer buttons in HTML
   answer1.innerHTML = allQuestions[currentQuestionIndex].answer[0].text;
   answer2.innerHTML = allQuestions[currentQuestionIndex].answer[1].text;
@@ -78,6 +79,7 @@ function showQuestion(currentQuestionIndex) {
   the selected answer changes the background color depending on correctness of the answer
   only one answer is possible, once one answer is selected the rest of the answer buttons are disabled
   */
+
   answer1.addEventListener("click", () => {
     if (allQuestions[currentQuestionIndex].answer[0].isCorrect) {
       answer1.style.backgroundColor = "#009688";
@@ -86,6 +88,8 @@ function showQuestion(currentQuestionIndex) {
       answer3.disabled = true;
       answer4.disabled = true;
       correct++;
+      console.log(allQuestions[currentQuestionIndex].answer[0].isCorrect);
+      console.log(correct);
     } else {
       answer1.style.backgroundColor = "red";
       resultMessage.innerHTML = "Wrong Answer!";
@@ -195,7 +199,6 @@ function displayScore() {
 
 let allQuestions = [
   {
-    id: "1.",
     question: "What is the capital of Finland?",
     answer: [
       {
@@ -220,7 +223,6 @@ let allQuestions = [
     question: "Which planet is closest to the sun?",
     answer: [
       {
-        id: "2.",
         text: "Mercury",
         isCorrect: true,
       },
@@ -242,7 +244,6 @@ let allQuestions = [
     question: "Who painted Mona Lisa?",
     answer: [
       {
-        id: "3.",
         text: "Picasso",
         isCorrect: false,
       },
@@ -261,7 +262,6 @@ let allQuestions = [
     ],
   },
   {
-    id: "4.",
     question: "What's a baby rabbit called?",
     answer: [
       {
@@ -283,7 +283,6 @@ let allQuestions = [
     ],
   },
   {
-    id: "5.",
     question: "Who invented a World Wide Web?",
     answer: [
       {
@@ -305,7 +304,6 @@ let allQuestions = [
     ],
   },
   {
-    id: "6.",
     question: "What is the smallest country in the world?",
     answer: [
       {
