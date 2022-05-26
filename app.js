@@ -45,25 +45,29 @@ function showQuestion(currentQuestionIndex) {
   resultMessage.innerHTML = "";
 
   let answerArray = allQuestions[currentQuestionIndex].answerOptions.length;
+  let correct = allQuestions[currentQuestionIndex].correct;
+
+  console.log(correct);
 
   for (let i = 0; i < answerArray; i++) {
-    let correct = allQuestions[currentQuestionIndex].correct;
     answerButtons[i].style.backgroundColor = "";
-    console.log(correct);
     answerButtons[i].innerHTML =
       allQuestions[currentQuestionIndex].answerOptions[i];
 
     answerButtons[i].addEventListener("click", function () {
-      console.log(answerButtons[i]);
-      if (answerButtons[i] == correct) {
-        console.log(answerButtons[i]);
-        console.log(answerButtons[i].value);
+      if (
+        allQuestions[currentQuestionIndex].answerOptions.indexOf(
+          allQuestions[currentQuestionIndex].answerOptions[i]
+        ) == correct
+      ) {
         answerButtons[i].style.backgroundColor = "#009688";
         resultMessage.innerHTML = "Correct! Well Done 👏";
         count++;
+        console.log(count);
       } else {
         answerButtons[i].style.backgroundColor = "red";
         resultMessage.innerHTML = "Wrong Answer!";
+        count = 0;
       }
     });
   }
