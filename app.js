@@ -8,7 +8,6 @@ let question = document.getElementById("question");
 let answerButtons = document.getElementsByClassName("answer-btn");
 let resultMessage = document.getElementById("result-msg");
 let currentQuestionIndex = 0;
-//let count = 0; //setting a counter for a number of questions answered correctly
 
 //selecting button to start the quiz
 startButton.addEventListener("click", startQuiz);
@@ -46,8 +45,6 @@ function showQuestion(currentQuestionIndex) {
 
   let answerArray = allQuestions[currentQuestionIndex].answerOptions.length;
   let correct = allQuestions[currentQuestionIndex].correct;
-
-  //console.log(correct);
 
   for (let i = 0; i < answerArray; i++) {
     answerButtons[i].style.backgroundColor = "";
@@ -108,10 +105,10 @@ function nextQuestion() {
 
 function displayScore() {
   quizTitle.innerHTML = "General Knowledge Quiz 🏁";
-
+  quizTitle.style.fontSize = "30px";
+  quizTitle.style.margin = "0";
   nextButton.classList.add("hide");
   resultMessage.classList.add("hide");
-  //questionSection.innerHTML = `SCORE: ${count} / ${allQuestions.length}`; //!!!!!!!!!!!!!!!!!!!!!!!!!!It counts correct ALSO the previous question index, if that answer was correct or not
   questionSection.classList.add("hide");
   restartButton.classList.remove("hide");
 
