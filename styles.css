@@ -1,3 +1,10 @@
+body,
+html {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+}
+
 h1 {
   color: black;
 }
@@ -27,19 +34,18 @@ h1 {
   border-radius: 7px;
   font-size: 25px;
   transition: all 200ms ease;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .start-btn:hover,
 .next-btn:hover,
 .restart-btn:hover {
-  background-color: #009688;
-  color: white;
+  font-size: 28px;
   cursor: pointer;
 }
 
 .answer-section {
-  border: 1px solid #009688;
+  border: 1px solid black;
   margin: 5px 100px;
   padding: 31px;
   border-radius: 7px;
@@ -49,10 +55,20 @@ h1 {
   font-size: 16px;
   margin: 15px 20px 15px 20px;
   border-radius: 5px;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: white;
+  color: black;
   width: 150px;
   height: 100px;
+}
+
+.result-msg {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  background-color: black;
+  color: white;
+  margin: 5px 100px;
+  border-radius: 7px;
 }
 
 .hide {

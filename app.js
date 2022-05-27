@@ -8,7 +8,7 @@ let question = document.getElementById("question");
 let answerButtons = document.getElementsByClassName("answer-btn");
 let resultMessage = document.getElementById("result-msg");
 let currentQuestionIndex = 0;
-let count = 0; //setting a counter for a number of questions answered correctly
+//let count = 0; //setting a counter for a number of questions answered correctly
 
 //selecting button to start the quiz
 startButton.addEventListener("click", startQuiz);
@@ -27,11 +27,11 @@ function startQuiz() {
   the General Knowledge Quiz title referenced in the Start page is styled through CSS
   */
 
-  quizTitle.style.color = "#009688";
   quizTitle.style.fontSize = "20px";
   quizTitle.style.marginLeft = "10px";
   quizTitle.style.textAlign = "left";
   quizTitle.style.marginTop = "10px";
+  quizTitle.innerHTML = "General Knowledge Quiz ⭐︎";
 
   showQuestion(currentQuestionIndex);
 }
@@ -51,6 +51,7 @@ function showQuestion(currentQuestionIndex) {
 
   for (let i = 0; i < answerArray; i++) {
     answerButtons[i].style.backgroundColor = "";
+    answerButtons[i].style.color = "";
     answerButtons[i].innerHTML =
       allQuestions[currentQuestionIndex].answerOptions[i];
 
@@ -60,13 +61,15 @@ function showQuestion(currentQuestionIndex) {
           allQuestions[currentQuestionIndex].answerOptions[i]
         ) == correct
       ) {
-        answerButtons[i].style.backgroundColor = "#009688";
+        answerButtons[i].style.backgroundColor = "green";
+        answerButtons[i].style.color = "white";
         resultMessage.innerHTML = "Correct! Well Done 👏";
-        count++;
-        console.log(count);
+        //count++;
+        //console.log(count);
       } else {
         answerButtons[i].style.backgroundColor = "red";
-        resultMessage.innerHTML = "Wrong Answer!";
+        answerButtons[i].style.color = "white";
+        resultMessage.innerHTML = "Wrong Answer!🙂 Try Again!";
         count = 0;
       }
     });
@@ -83,7 +86,7 @@ nextButton.addEventListener("click", () => {
   if (resultMessage.innerHTML == "") {
     resultMessage.innerHTML = "Select answer!";
   } else if (
-    resultMessage.innerHTML == "Wrong Answer!" ||
+    resultMessage.innerHTML == "Wrong Answer!🙂 Try Again!" ||
     resultMessage.innerHTML == "Correct! Well Done 👏"
   ) {
     nextQuestion();
@@ -104,9 +107,15 @@ function nextQuestion() {
 }
 
 function displayScore() {
+  quizTitle.style.fontSize = "50px";
+  quizTitle.style.margin = "50px";
+  quizTitle.style.textAlign = "center";
+  quizTitle.innerHTML = "General Knowledge Quiz 🏁";
+
   nextButton.classList.add("hide");
   resultMessage.classList.add("hide");
-  questionSection.innerHTML = `SCORE: ${count} / ${allQuestions.length}`; //!!!!!!!!!!!!!!!!!!!!!!!!!!It counts correct ALSO the previous question index, if that answer was correct or not
+  //questionSection.innerHTML = `SCORE: ${count} / ${allQuestions.length}`; //!!!!!!!!!!!!!!!!!!!!!!!!!!It counts correct ALSO the previous question index, if that answer was correct or not
+  questionSection.classList.add("hide");
   restartButton.classList.remove("hide");
 
   //location.reload() reloads the current URL (like a refresh button) and thus restarts the quiz from the beginning
