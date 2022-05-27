@@ -3,6 +3,7 @@ html {
   display: grid;
   min-height: 100%;
   place-items: center;
+  margin: 0 auto;
 }
 
 h1 {
@@ -77,13 +78,30 @@ h1 {
 
 @media (max-width: 768px) {
   .quiz-title {
-    margin: 50px;
-    font-size: 34px;
+    margin: 30px;
+    font-size: 25px;
   }
 
   .start-btn,
   .next-btn,
   .restart-btn {
-    font-size: 25px;
+    font-size: 20px;
+  }
+
+  .start-btn:hover,
+  .next-btn:hover,
+  .restart-btn:hover {
+    font-size: 23px;
+  }
+
+  .question {
+    font-size: 20px;
+    font-weight: 400px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .result-msg {
+    font-size: 18px;
   }
 }

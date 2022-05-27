@@ -47,7 +47,7 @@ function showQuestion(currentQuestionIndex) {
   let answerArray = allQuestions[currentQuestionIndex].answerOptions.length;
   let correct = allQuestions[currentQuestionIndex].correct;
 
-  console.log(correct);
+  //console.log(correct);
 
   for (let i = 0; i < answerArray; i++) {
     answerButtons[i].style.backgroundColor = "";
@@ -107,9 +107,6 @@ function nextQuestion() {
 }
 
 function displayScore() {
-  quizTitle.style.fontSize = "50px";
-  quizTitle.style.margin = "50px";
-  quizTitle.style.textAlign = "center";
   quizTitle.innerHTML = "General Knowledge Quiz 🏁";
 
   nextButton.classList.add("hide");
